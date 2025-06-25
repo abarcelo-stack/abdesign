@@ -9,7 +9,7 @@
     <!-- Google Fonts: Figtree -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
         /* Estilos personalizados y configuración de Tailwind */
         body {
@@ -27,9 +27,14 @@
             text-fill-color: transparent;
         }
 
-        /* Transiciones suaves para elementos no animados por JS */
+        /* Transiciones suaves para elementos */
         .transition-all-smooth {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* Estilos para la animación del Hero */
+        .transition-opacity-transform {
+             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
 
         /* Estilo para el estado activo del filtro */
@@ -53,38 +58,22 @@
 <body class="bg-[#001329]">
 
     <!-- HERO SECTION -->
-    <header id="hero-header" class="h-screen w-full flex items-center justify-center fixed top-0 left-0 -z-10">
-        <div class="relative w-full flex items-center justify-center">
-            <!-- Main Headline -->
-            <h1 id="main-headline" class="text-[18vw] md:text-[15vw] lg:text-[12vw] font-bold tracking-tighter">
-                <span class="text-[#495E75]">ab</span><span class="main-grad">design</span><span class="text-[#495E75]">hub</span>
-            </h1>
-            <!-- Intro Paragraph -->
-            <div id="intro-paragraph-container" class="absolute w-full max-w-4xl text-center px-4">
-                <p class="text-2xl md:text-3xl font-light text-[#BBC0CA] leading-relaxed">
-                    A curated collection of projects where AI-driven innovation and human-centric design converge, resulting in unique, forward-thinking digital experiences that explore the future intersection of technology and creativity in design.
-                </p>
+    <header id="hero-header" class="h-[200vh] w-full">
+        <div id="hero-sticky-container" class="h-screen w-full sticky top-0 flex items-center justify-center overflow-hidden">
+            <div id="hero-content" class="text-[18vw] md:text-[15vw] lg:text-[12vw] font-bold tracking-tighter relative px-6 w-full text-center opacity-0 transition-opacity-transform">
+                <span id="ab-logo-part" class="text-[#495E75]">ab</span><span id="design-logo-part" class="main-grad">design</span><span id="hub-logo-part" class="text-[#495E75]">hub</span>
             </div>
+            <div id="abd-logo-final" class="absolute top-6 left-4 sm:left-6 lg:left-8 text-3xl font-bold tracking-wider" style="opacity: 0; transform: scale(1.5); transition: opacity 0.4s ease-out, transform 0.4s ease-out;">
+                <span class="text-[#495E75]">ab</span><span class="main-grad">d</span>
+            </div>
+            <p id="intro-paragraph" class="absolute w-full max-w-4xl text-center text-2xl md:text-3xl font-light text-[#BBC0CA] leading-relaxed px-6" style="opacity: 0; transition: opacity 0.5s ease-out, transform 0.5s ease-out;">
+                A curated collection of projects where AI-driven innovation and human-centric design converge, resulting in unique, forward-thinking digital experiences that explore the future intersection of technology and creativity in design.
+            </p>
         </div>
     </header>
 
-    <!-- STICKY LOGO ON SCROLL -->
-    <div id="sticky-logo" class="fixed top-0 left-0 w-full bg-[#001329]/80 backdrop-blur-sm z-50 transition-all-smooth -translate-y-full opacity-0">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-start h-16">
-                 <div class="text-3xl font-bold tracking-wider"><span class="text-[#495E75]">ab</span><span class="main-grad">d</span></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- CONTENT WRAPPER -->
-    <div class="relative z-10">
-        <!-- Spacer to push content below the hero -->
-        <div class="h-screen"></div>
-        <!-- Spacer for the intro paragraph that is now in the hero -->
-        <div class="h-[25vh]"></div>
-
-
+    <!-- CONTENT WRAPPER (post-hero) -->
+    <div class="relative z-10 bg-[#001329]">
         <!-- SHOWCASE SECTION -->
         <section id="showcase" class="w-full bg-[#0075FF] py-20 px-4 sm:px-6 lg:px-8">
             <div class="max-w-7xl mx-auto">
@@ -102,14 +91,15 @@
                 </div>
             </div>
         </section>
+
+        <!-- FOOTER -->
+        <footer class="bg-[#001329] py-8">
+            <div class="text-center text-[#495E75]">
+                &copy; 2024 ab design hub. Creado con IA y diseño.
+            </div>
+        </footer>
     </div>
 
-    <!-- FOOTER -->
-    <footer class="bg-[#001329] py-8">
-        <div class="text-center text-[#495E75]">
-            &copy; 2024 ab design hub. Creado con IA y diseño.
-        </div>
-    </footer>
 
     <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -117,48 +107,77 @@
         // --- DATA ---
         const filterCategories = ['All', 'Soon', 'Personal', 'Business', 'AI Ex', 'Grid', 'Gemini', 'V0'];
         const projects = [
-            { id: 1, title: 'Valle de Guadalupe 2025', tags: ['Personal', 'Gemini', 'V0'], link: 'https://abarcelo-stack.github.io/abdesign/valle25' },
-            { id: 2, title: 'App en HTML con mini prompt', tags: ['Business', 'Gemini', 'V0', 'Grid', 'AI Ex'], link: 'https://abarcelo-stack.github.io/abdesign/appbx' },
-            { id: 3, title: 'Sales HUB', tags: ['Soon', 'Business', 'Gemini', 'AI Ex'], link: 'https://abarcelo-stack.github.io/abdesign/saleshub' },
-            { id: 4, title: 'UX Design HUB', tags: ['Soon', 'Business', 'Gemini', 'AI Ex'], link: 'https://abarcelo-stack.github.io/abdesign/uxhub' },
-            { id: 5, title: 'Help Center Redesign', tags: ['Soon', 'Business', 'Gemini', 'AI Ex'], link: 'https://abarcelo-stack.github.io/abdesign/helpcenter' },
-            { id: 6, title: 'UX Design Showcase', tags: ['Soon', 'Business', 'Gemini', 'AI Ex'], link: 'https://abarcelo-stack.github.io/abdesign/showcase' }
+            { id: 1, title: 'Valle de Guadalupe 2025', tags: ['Personal', 'Gemini', 'V0'], link: './valle25' },
+            { id: 2, title: 'App en HTML con mini prompt', tags: ['Business', 'Gemini', 'V0', 'Grid', 'AI Ex'], link: './appbx' },
+            { id: 3, title: 'Sales HUB', tags: ['Soon', 'Business', 'Gemini', 'AI Ex'], link: './saleshub' },
+            { id: 4, title: 'UX Design HUB', tags: ['Soon', 'Business', 'Gemini', 'AI Ex'], link: './uxhub' },
+            { id: 5, title: 'Help Center Redesign', tags: ['Soon', 'Business', 'Gemini', 'AI Ex'], link: './helpcenter' },
+            { id: 6, title: 'UX Design Showcase', tags: ['Soon', 'Business', 'Gemini', 'AI Ex'], link: './showcase' }
         ];
 
         // --- DOM ELEMENTS ---
-        const mainHeadline = document.getElementById('main-headline');
-        const introParagraphContainer = document.getElementById('intro-paragraph-container');
-        const stickyLogo = document.getElementById('sticky-logo');
+        const heroContent = document.getElementById('hero-content');
+        const finalLogo = document.getElementById('abd-logo-final');
+        const introParagraph = document.getElementById('intro-paragraph');
         const filtersContainer = document.getElementById('filters');
         const projectGrid = document.getElementById('project-grid');
 
         // --- STATE ---
         let activeFilters = ['All'];
+        
+        // --- Quick Fade In on Load ---
+        setTimeout(() => {
+             heroContent.style.opacity = '1';
+        }, 100);
 
         // --- FUNCTIONS ---
-
         const handleScroll = () => {
             const scrollY = window.scrollY;
             const vh = window.innerHeight;
-            const animationRange = vh; 
-            const scrollFraction = Math.min(scrollY / animationRange, 1);
 
-            const headlineY = -scrollFraction * 300;
-            const headlineOpacity = 1 - scrollFraction * 1.5;
-            mainHeadline.style.opacity = Math.max(0, headlineOpacity).toString();
-            mainHeadline.style.transform = `translateY(${headlineY}px) scale(${1 - scrollFraction * 0.05})`;
+            // --- Phase 1: Headline to Logo Transformation (0 to 60% of viewport height) ---
+            const headlineEnd = vh * 0.6;
+            const headlineProgress = Math.min(scrollY / headlineEnd, 1);
+            
+            const headlineScale = 1 - headlineProgress * 0.2;
+            const headlineY = -headlineProgress * 80;
+            const headlineOpacity = 1 - headlineProgress;
 
-            const paragraphStartY = 150;
-            const paragraphTravelDistance = vh * 0.8;
-            const paragraphY = paragraphStartY - (scrollFraction * paragraphTravelDistance);
-            const paragraphOpacity = Math.min(scrollFraction * 1.5, 1);
-            introParagraphContainer.style.opacity = paragraphOpacity.toString();
-            introParagraphContainer.style.transform = `translateY(${paragraphY}px) scale(1)`;
-
-            if (scrollY > vh * 0.9) {
-                stickyLogo.classList.remove('-translate-y-full', 'opacity-0');
+            heroContent.style.opacity = headlineOpacity;
+            heroContent.style.transform = `translateY(${headlineY}px) scale(${headlineScale})`;
+            
+            // --- Corner Logo Fade In ---
+            const logoStart = vh * 0.2;
+            const logoEnd = vh * 0.6;
+            if (scrollY > logoStart && scrollY <= logoEnd) {
+                const logoProgress = (scrollY - logoStart) / (logoEnd - logoStart);
+                finalLogo.style.opacity = logoProgress;
+                finalLogo.style.transform = 'scale(1)';
+            } else if (scrollY <= logoStart) {
+                finalLogo.style.opacity = 0;
+                finalLogo.style.transform = 'scale(1.5)';
             } else {
-                stickyLogo.classList.add('-translate-y-full', 'opacity-0');
+                finalLogo.style.opacity = 1;
+                finalLogo.style.transform = 'scale(1)';
+            }
+
+            // --- Phase 2 & 3: Paragraph Animation (Appears and Disappears) ---
+            const paragraphFadeInStart = vh * 0.7;
+            const paragraphFadeInEnd = vh * 1.1;
+            const paragraphFadeOutStart = vh * 1.4;
+            const paragraphFadeOutEnd = vh * 1.9;
+
+            if (scrollY >= paragraphFadeInStart && scrollY < paragraphFadeOutStart) {
+                const fadeInProgress = Math.min((scrollY - paragraphFadeInStart) / (paragraphFadeInEnd - paragraphFadeInStart), 1);
+                introParagraph.style.opacity = fadeInProgress;
+                introParagraph.style.transform = `translateY(${(1 - fadeInProgress) * 40}px)`;
+            } else if (scrollY >= paragraphFadeOutStart) {
+                const fadeOutProgress = Math.min((scrollY - paragraphFadeOutStart) / (paragraphFadeOutEnd - paragraphFadeOutStart), 1);
+                introParagraph.style.opacity = 1 - fadeOutProgress;
+                introParagraph.style.transform = 'translateY(0px)';
+            } else {
+                introParagraph.style.opacity = 0;
+                introParagraph.style.transform = 'translateY(40px)';
             }
         };
 
