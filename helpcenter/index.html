@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Próximamente | ab design hub</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Figtree -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos personalizados y configuración de Tailwind */
+        body {
+            font-family: 'Figtree', sans-serif;
+            background-color: #001329; /* MainBlackColor */
+            color: #BBC0CA; /* LightGrayColor */
+            overflow-x: hidden; /* Previene el desbordamiento horizontal por el texto grande */
+        }
+
+        /* Definición del gradiente principal */
+        .main-grad {
+            background: linear-gradient(90deg, #07CDEC, #0075FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+
+        /* Estilo para alinear el contenido al centro de la pantalla */
+        .center-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start; /* Alineado a la izquierda como en la imagen */
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body class="bg-[#001329]">
+
+    <!-- Main Content -->
+    <main class="center-container max-w-7xl mx-auto px-6">
+        <!-- Logo -->
+        <div class="mb-8">
+             <div class="text-3xl font-bold tracking-wider"><span class="text-[#495E75]">ab</span><span class="main-grad">d</span></div>
+        </div>
+        
+        <!-- Contenido Dinámico -->
+        <div>
+            <!-- El nombre del proyecto se insertará aquí -->
+            <h1 id="project-name" class="text-[22vw] font-bold text-[#495E75] lowercase leading-none tracking-tighter"></h1>
+            <!-- La palabra "soon" -->
+            <h2 class="text-[22vw] font-bold main-grad lowercase leading-none tracking-tighter">soon</h2>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- FUNCIÓN PARA OBTENER EL NOMBRE DEL PROYECTO DESDE LA URL ---
+            const getProjectNameFromURL = () => {
+                // Obtiene la ruta de la URL (ej. "/valle25")
+                const path = window.location.pathname;
+                
+                // Limpia la ruta para obtener solo el nombre del proyecto
+                // Remueve la primera diagonal "/" y cualquier otra al final
+                const projectName = path.replace(/^\/|\/$/g, ''); 
+
+                return projectName || 'proyecto'; // Devuelve 'proyecto' si la ruta está vacía
+            };
+
+            // --- ELEMENTO DEL DOM ---
+            const projectNameElement = document.getElementById('project-name');
+
+            // --- INICIALIZACIÓN ---
+            // Obtiene el nombre del proyecto y lo muestra en el elemento h1
+            if (projectNameElement) {
+                projectNameElement.textContent = getProjectNameFromURL();
+            }
+        });
+    </script>
+
+</body>
+</html>
