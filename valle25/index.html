@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itinerario Valle de Guadalupe | 16-19 Julio 2025</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F5F2; /* Un color de fondo cálido y suave */
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1627896157938-164543ad4372?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .btn {
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+        }
+        .tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.75rem;
+        }
+        .birthday-tag {
+            background-color: #EC4899; /* Rosa vibrante */
+            color: white;
+        }
+        .michelin-tag {
+             background-color: #D97706; /* Ámbar */
+            color: white;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header Section -->
+    <header class="hero-bg text-white">
+        <div class="container mx-auto px-6 py-20 md:py-32 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">Sabores del Valle de Guadalupe</h1>
+            <p class="mt-4 text-xl md:text-2xl font-light">Un Itinerario de Cumpleaños Inolvidable</p>
+            <p class="mt-2 text-lg font-semibold bg-white/20 inline-block px-4 py-1 rounded-full">16 al 19 de Julio, 2025</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        
+        <!-- Logistics Section -->
+        <section id="logistica" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-900">Logística de Viaje</h2>
+            <div class="grid md:grid-cols-2 gap-8 text-center">
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-500">
+                    <i data-lucide="flight-takeoff" class="mx-auto h-12 w-12 text-green-600 mb-3"></i>
+                    <h3 class="text-xl font-bold mb-2">Llegada (Miércoles)</h3>
+                    <p>Aterrizaje en TIJ a las <span class="font-semibold">8:03 AM</span>.</p>
+                    <p>Llegada estimada al Valle: <span class="font-semibold">11:00 - 11:30 AM</span>.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-red-500">
+                     <i data-lucide="flight-land" class="mx-auto h-12 w-12 text-red-600 mb-3"></i>
+                    <h3 class="text-xl font-bold mb-2">Regreso (Sábado)</h3>
+                    <p>Vuelo desde TIJ a las <span class="font-semibold">4:37 PM</span>.</p>
+                    <p class="font-bold text-red-700 mt-2">Salida límite del Valle: <span class="text-2xl">12:15 PM</span></p>
+                    <p class="text-sm text-gray-600">(Incluye tiempo para devolver auto rentado).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Itinerary -->
+        <section id="itinerario">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Itinerario Detallado</h2>
+            
+            <!-- Day 1: Wednesday -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold mb-6 border-b-2 border-pink-500 pb-2 flex items-center">
+                    <i data-lucide="calendar" class="h-6 w-6 mr-3 text-pink-600"></i>
+                    Día 1: Miércoles, 16 de Julio 
+                    <span class="tag birthday-tag ml-4">¡Día de Cumpleaños!</span>
+                </h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Activity 1 -->
+                    <article class="card flex flex-col">
+                        <div class="p-6 flex-grow">
+                             <div class="flex items-center mb-3 text-purple-700">
+                                <i data-lucide="glass-water" class="h-6 w-6 mr-2"></i>
+                                <h4 class="font-bold text-lg">11:30 AM: Cata en Bruma</h4>
+                            </div>
+                            <p class="text-gray-600">Comiencen el festejo en uno de los viñedos más trendy, famoso por su arquitectura, ambiente y vinos de mínima intervención.</p>
+                        </div>
+                        <div class="p-6 bg-gray-50 rounded-b-lg mt-auto">
+                            <a href="http://www.bruma.mx/" target="_blank" class="btn w-full text-center bg-purple-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-purple-700">Reservar en Bruma</a>
+                        </div>
+                    </article>
+                    <!-- Activity 2 -->
+                    <article class="card flex flex-col">
+                        <div class="p-6 flex-grow">
+                             <div class="flex items-center mb-3 text-pink-700">
+                                <i data-lucide="cake-slice" class="h-6 w-6 mr-2"></i>
+                                <h4 class="font-bold text-lg">2:30 PM: Comida de Celebración en Fauna</h4>
+                            </div>
+                            <p class="text-gray-600">El lugar con el mejor ambiente para celebrar. Su menú degustación es una aventura culinaria en un entorno vibrante y aclamado por la crítica.</p>
+                        </div>
+                        <div class="p-6 bg-gray-50 rounded-b-lg mt-auto">
+                            <a href="https://faunarestaurante.mx/" target="_blank" class="btn w-full text-center bg-pink-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-pink-700">Reservar en Fauna (+52 646 103 6403)</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            
+            <!-- Day 2: Thursday -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold mb-6 border-b-2 border-amber-500 pb-2 flex items-center">
+                    <i data-lucide="calendar" class="h-6 w-6 mr-3 text-amber-600"></i>
+                    Día 2: Jueves, 17 de Julio
+                </h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                     <!-- Activity 1 -->
+                    <article class="card flex flex-col">
+                        <div class="p-6 flex-grow">
+                             <div class="flex items-center mb-3 text-orange-700">
+                                <i data-lucide="coffee" class="h-6 w-6 mr-2"></i>
+                                <h4 class="font-bold text-lg">9:30 AM: La Cocina de Doña Esthela</h4>
+                            </div>
+                            <p class="text-gray-600">Disfruten del "mejor desayuno del mundo". Una experiencia rústica e imperdible con su famoso borrego tatemado. Lleguen temprano.</p>
+                        </div>
+                    </article>
+                    <!-- Activity 2 -->
+                    <article class="card flex flex-col">
+                        <div class="p-6 flex-grow">
+                             <div class="flex items-center mb-3 text-green-700">
+                                <i data-lucide="grape" class="h-6 w-6 mr-2"></i>
+                                <h4 class="font-bold text-lg">1:30 PM: Vistas en Monte Xanic</h4>
+                            </div>
+                            <p class="text-gray-600">Visiten esta vinícola pionera. Sus recorridos y vistas panorámicas son tan espectaculares como sus vinos de alta gama.</p>
+                        </div>
+                        <div class="p-6 bg-gray-50 rounded-b-lg mt-auto">
+                            <a href="https://montexanic.com.mx/" target="_blank" class="btn w-full text-center bg-green-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-green-700">Reservar en Monte Xanic</a>
+                        </div>
+                    </article>
+                    <!-- Activity 3 -->
+                    <article class="card flex flex-col">
+                        <div class="p-6 flex-grow">
+                             <div class="flex items-center mb-3 text-blue-700">
+                                <i data-lucide="shell" class="h-6 w-6 mr-2"></i>
+                                <h4 class="font-bold text-lg">4:00 PM: Comida en Conchas de Piedra</h4>
+                            </div>
+                             <span class="tag michelin-tag mb-2">★ Estrella Michelin</span>
+                            <p class="text-gray-600">Mariscos frescos y vinos espumosos en un ambiente chic. Una experiencia culinaria galardonada y refrescante.</p>
+                        </div>
+                         <div class="p-6 bg-gray-50 rounded-b-lg mt-auto">
+                            <a href="https://conchasdepiedra.com/" target="_blank" class="btn w-full text-center bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700">Reservar en Conchas de Piedra</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+             <!-- Day 3: Friday -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold mb-6 border-b-2 border-teal-500 pb-2 flex items-center">
+                    <i data-lucide="calendar" class="h-6 w-6 mr-3 text-teal-600"></i>
+                    Día 3: Viernes, 18 de Julio
+                </h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                     <!-- Activity 1 -->
+                    <article class="card flex flex-col">
+                        <div class="p-6 flex-grow">
+                             <div class="flex items-center mb-3 text-gray-700">
+                                <i data-lucide="landmark" class="h-6 w-6 mr-2"></i>
+                                <h4 class="font-bold text-lg">11:00 AM: Museo de la Vid y el Vino</h4>
+                            </div>
+                            <p class="text-gray-600">Una mañana cultural para conocer la fascinante historia que da forma a los vinos y la gastronomía de la región.</p>
+                        </div>
+                    </article>
+                    <!-- Activity 2 -->
+                    <article class="card flex flex-col">
+                        <div class="p-6 flex-grow">
+                             <div class="flex items-center mb-3 text-teal-700">
+                                <i data-lucide="utensils-crossed" class="h-6 w-6 mr-2"></i>
+                                <h4 class="font-bold text-lg">2:30 PM: Comida en Villa Torel</h4>
+                            </div>
+                            <p class="text-gray-600">Una alternativa excepcional con vistas espectaculares. Disfruten de alta cocina mediterránea en un entorno sofisticado y panorámico.</p>
+                        </div>
+                         <div class="p-6 bg-gray-50 rounded-b-lg mt-auto">
+                            <a href="https://villatorel.com/" target="_blank" class="btn w-full text-center bg-teal-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-teal-700">Reservar en Villa Torel (+52 646 286 3317)</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+             <!-- Day 4: Saturday -->
+            <div class="mb-12">
+                 <h3 class="text-2xl font-bold mb-6 border-b-2 border-indigo-500 pb-2 flex items-center">
+                    <i data-lucide="calendar" class="h-6 w-6 mr-3 text-indigo-600"></i>
+                    Día 4: Sábado, 19 de Julio
+                </h3>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center text-indigo-700">
+                        <i data-lucide="shopping-bag" class="h-6 w-6 mr-2"></i>
+                        <h4 class="font-bold text-lg">Mañana de Despedida</h4>
+                    </div>
+                    <p class="mt-2 text-gray-600">Aprovechen para un desayuno tranquilo, comprar sus vinos favoritos como recuerdo y prepararse para el regreso.</p>
+                    <p class="mt-2 font-semibold text-gray-800">Recuerden salir a las <span class="text-indigo-700">12:15 PM</span> hacia Tijuana.</p>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+    
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>¡Que disfruten de un viaje culinario extraordinario!</p>
+            <p class="text-sm text-gray-400 mt-2">Este itinerario es una sugerencia. Los horarios pueden variar.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

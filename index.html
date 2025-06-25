@@ -1,247 +1,233 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Itinerario Valle de Guadalupe | 16-19 Julio 2025</title>
-    
+    <title>ab design hub</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts: Figtree -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
+        /* Estilos personalizados y configuración de Tailwind */
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #F8F5F2; /* Un color de fondo cálido y suave */
+            font-family: 'Figtree', sans-serif;
+            background-color: #001329; /* MainBlackColor */
+            color: #BBC0CA; /* LightGrayColor */
         }
-        .hero-bg {
-            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1627896157938-164543ad4372?q=80&w=2070&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
+
+        /* Definición del gradiente principal */
+        .main-grad {
+            background: linear-gradient(90deg, #07CDEC, #0075FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
         }
-        .card {
-            background-color: white;
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        /* Transiciones suaves para elementos no animados por JS */
+        .transition-all-smooth {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-        }
-        .btn {
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-        .btn:hover {
-            transform: scale(1.05);
-        }
-        .tag {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            font-weight: 600;
-            font-size: 0.75rem;
-        }
-        .birthday-tag {
-            background-color: #EC4899; /* Rosa vibrante */
+
+        /* Estilo para el estado activo del filtro */
+        .filter-chip.active {
+            background-color: #001329; /* MainBlackColor */
             color: white;
+            box-shadow: 0 0 15px rgba(0, 19, 41, 0.5);
         }
-        .michelin-tag {
-             background-color: #D97706; /* Ámbar */
-            color: white;
+
+        /* Estilos para las tarjetas de proyecto y su hover */
+        .project-card {
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform, box-shadow;
+        }
+        .project-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px -12px rgb(0 19 41 / 0.35);
         }
     </style>
 </head>
-<body class="text-gray-800">
+<body class="bg-[#001329]">
 
-    <!-- Header Section -->
-    <header class="hero-bg text-white">
-        <div class="container mx-auto px-6 py-20 md:py-32 text-center">
-            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">Sabores del Valle de Guadalupe</h1>
-            <p class="mt-4 text-xl md:text-2xl font-light">Un Itinerario de Cumpleaños Inolvidable</p>
-            <p class="mt-2 text-lg font-semibold bg-white/20 inline-block px-4 py-1 rounded-full">16 al 19 de Julio, 2025</p>
+    <!-- HERO SECTION -->
+    <header id="hero-header" class="h-screen w-full flex items-center justify-center fixed top-0 left-0 -z-10">
+        <div class="relative w-full flex items-center justify-center">
+            <!-- Main Headline -->
+            <h1 id="main-headline" class="text-[18vw] md:text-[15vw] lg:text-[12vw] font-bold tracking-tighter">
+                <span class="text-[#495E75]">ab</span><span class="main-grad">design</span><span class="text-[#495E75]">hub</span>
+            </h1>
+            <!-- Intro Paragraph -->
+            <div id="intro-paragraph-container" class="absolute w-full max-w-4xl text-center px-4">
+                <p class="text-2xl md:text-3xl font-light text-[#BBC0CA] leading-relaxed">
+                    A curated collection of projects where AI-driven innovation and human-centric design converge, resulting in unique, forward-thinking digital experiences that explore the future intersection of technology and creativity in design.
+                </p>
+            </div>
         </div>
     </header>
 
-    <main class="container mx-auto px-6 py-12">
-        
-        <!-- Logistics Section -->
-        <section id="logistica" class="mb-16">
-            <h2 class="text-3xl font-bold text-center mb-8 text-gray-900">Logística de Viaje</h2>
-            <div class="grid md:grid-cols-2 gap-8 text-center">
-                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-500">
-                    <i data-lucide="flight-takeoff" class="mx-auto h-12 w-12 text-green-600 mb-3"></i>
-                    <h3 class="text-xl font-bold mb-2">Llegada (Miércoles)</h3>
-                    <p>Aterrizaje en TIJ a las <span class="font-semibold">8:03 AM</span>.</p>
-                    <p>Llegada estimada al Valle: <span class="font-semibold">11:00 - 11:30 AM</span>.</p>
+    <!-- STICKY LOGO ON SCROLL -->
+    <div id="sticky-logo" class="fixed top-0 left-0 w-full bg-[#001329]/80 backdrop-blur-sm z-50 transition-all-smooth -translate-y-full opacity-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-start h-16">
+                 <div class="text-3xl font-bold tracking-wider"><span class="text-[#495E75]">ab</span><span class="main-grad">d</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT WRAPPER -->
+    <div class="relative z-10">
+        <!-- Spacer to push content below the hero -->
+        <div class="h-screen"></div>
+        <!-- Spacer for the intro paragraph that is now in the hero -->
+        <div class="h-[25vh]"></div>
+
+
+        <!-- SHOWCASE SECTION -->
+        <section id="showcase" class="w-full bg-[#0075FF] py-20 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto">
+                <!-- Title -->
+                <h2 class="text-5xl font-bold text-center lowercase mb-12 text-white">showcase</h2>
+                
+                <!-- Filter Chips -->
+                <div id="filters" class="flex items-center justify-center flex-wrap gap-3 mb-16">
+                    <!-- Los chips se generarán con JS -->
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-red-500">
-                     <i data-lucide="flight-land" class="mx-auto h-12 w-12 text-red-600 mb-3"></i>
-                    <h3 class="text-xl font-bold mb-2">Regreso (Sábado)</h3>
-                    <p>Vuelo desde TIJ a las <span class="font-semibold">4:37 PM</span>.</p>
-                    <p class="font-bold text-red-700 mt-2">Salida límite del Valle: <span class="text-2xl">12:15 PM</span></p>
-                    <p class="text-sm text-gray-600">(Incluye tiempo para devolver auto rentado).</p>
+
+                <!-- Projects Grid -->
+                <div id="project-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <!-- Las tarjetas de proyecto se generarán con JS -->
                 </div>
             </div>
         </section>
+    </div>
 
-        <!-- Itinerary -->
-        <section id="itinerario">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Itinerario Detallado</h2>
-            
-            <!-- Day 1: Wednesday -->
-            <div class="mb-12">
-                <h3 class="text-2xl font-bold mb-6 border-b-2 border-pink-500 pb-2 flex items-center">
-                    <i data-lucide="calendar" class="h-6 w-6 mr-3 text-pink-600"></i>
-                    Día 1: Miércoles, 16 de Julio 
-                    <span class="tag birthday-tag ml-4">¡Día de Cumpleaños!</span>
-                </h3>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <!-- Activity 1 -->
-                    <article class="card flex flex-col">
-                        <div class="p-6 flex-grow">
-                             <div class="flex items-center mb-3 text-purple-700">
-                                <i data-lucide="glass-water" class="h-6 w-6 mr-2"></i>
-                                <h4 class="font-bold text-lg">11:30 AM: Cata en Bruma</h4>
-                            </div>
-                            <p class="text-gray-600">Comiencen el festejo en uno de los viñedos más trendy, famoso por su arquitectura, ambiente y vinos de mínima intervención.</p>
-                        </div>
-                        <div class="p-6 bg-gray-50 rounded-b-lg mt-auto">
-                            <a href="http://www.bruma.mx/" target="_blank" class="btn w-full text-center bg-purple-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-purple-700">Reservar en Bruma</a>
-                        </div>
-                    </article>
-                    <!-- Activity 2 -->
-                    <article class="card flex flex-col">
-                        <div class="p-6 flex-grow">
-                             <div class="flex items-center mb-3 text-pink-700">
-                                <i data-lucide="cake-slice" class="h-6 w-6 mr-2"></i>
-                                <h4 class="font-bold text-lg">2:30 PM: Comida de Celebración en Fauna</h4>
-                            </div>
-                            <p class="text-gray-600">El lugar con el mejor ambiente para celebrar. Su menú degustación es una aventura culinaria en un entorno vibrante y aclamado por la crítica.</p>
-                        </div>
-                        <div class="p-6 bg-gray-50 rounded-b-lg mt-auto">
-                            <a href="https://faunarestaurante.mx/" target="_blank" class="btn w-full text-center bg-pink-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-pink-700">Reservar en Fauna (+52 646 103 6403)</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-            
-            <!-- Day 2: Thursday -->
-            <div class="mb-12">
-                <h3 class="text-2xl font-bold mb-6 border-b-2 border-amber-500 pb-2 flex items-center">
-                    <i data-lucide="calendar" class="h-6 w-6 mr-3 text-amber-600"></i>
-                    Día 2: Jueves, 17 de Julio
-                </h3>
-                <div class="grid md:grid-cols-3 gap-8">
-                     <!-- Activity 1 -->
-                    <article class="card flex flex-col">
-                        <div class="p-6 flex-grow">
-                             <div class="flex items-center mb-3 text-orange-700">
-                                <i data-lucide="coffee" class="h-6 w-6 mr-2"></i>
-                                <h4 class="font-bold text-lg">9:30 AM: La Cocina de Doña Esthela</h4>
-                            </div>
-                            <p class="text-gray-600">Disfruten del "mejor desayuno del mundo". Una experiencia rústica e imperdible con su famoso borrego tatemado. Lleguen temprano.</p>
-                        </div>
-                    </article>
-                    <!-- Activity 2 -->
-                    <article class="card flex flex-col">
-                        <div class="p-6 flex-grow">
-                             <div class="flex items-center mb-3 text-green-700">
-                                <i data-lucide="grape" class="h-6 w-6 mr-2"></i>
-                                <h4 class="font-bold text-lg">1:30 PM: Vistas en Monte Xanic</h4>
-                            </div>
-                            <p class="text-gray-600">Visiten esta vinícola pionera. Sus recorridos y vistas panorámicas son tan espectaculares como sus vinos de alta gama.</p>
-                        </div>
-                        <div class="p-6 bg-gray-50 rounded-b-lg mt-auto">
-                            <a href="https://montexanic.com.mx/" target="_blank" class="btn w-full text-center bg-green-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-green-700">Reservar en Monte Xanic</a>
-                        </div>
-                    </article>
-                    <!-- Activity 3 -->
-                    <article class="card flex flex-col">
-                        <div class="p-6 flex-grow">
-                             <div class="flex items-center mb-3 text-blue-700">
-                                <i data-lucide="shell" class="h-6 w-6 mr-2"></i>
-                                <h4 class="font-bold text-lg">4:00 PM: Comida en Conchas de Piedra</h4>
-                            </div>
-                             <span class="tag michelin-tag mb-2">★ Estrella Michelin</span>
-                            <p class="text-gray-600">Mariscos frescos y vinos espumosos en un ambiente chic. Una experiencia culinaria galardonada y refrescante.</p>
-                        </div>
-                         <div class="p-6 bg-gray-50 rounded-b-lg mt-auto">
-                            <a href="https://conchasdepiedra.com/" target="_blank" class="btn w-full text-center bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700">Reservar en Conchas de Piedra</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-
-             <!-- Day 3: Friday -->
-            <div class="mb-12">
-                <h3 class="text-2xl font-bold mb-6 border-b-2 border-teal-500 pb-2 flex items-center">
-                    <i data-lucide="calendar" class="h-6 w-6 mr-3 text-teal-600"></i>
-                    Día 3: Viernes, 18 de Julio
-                </h3>
-                <div class="grid md:grid-cols-2 gap-8">
-                     <!-- Activity 1 -->
-                    <article class="card flex flex-col">
-                        <div class="p-6 flex-grow">
-                             <div class="flex items-center mb-3 text-gray-700">
-                                <i data-lucide="landmark" class="h-6 w-6 mr-2"></i>
-                                <h4 class="font-bold text-lg">11:00 AM: Museo de la Vid y el Vino</h4>
-                            </div>
-                            <p class="text-gray-600">Una mañana cultural para conocer la fascinante historia que da forma a los vinos y la gastronomía de la región.</p>
-                        </div>
-                    </article>
-                    <!-- Activity 2 -->
-                    <article class="card flex flex-col">
-                        <div class="p-6 flex-grow">
-                             <div class="flex items-center mb-3 text-teal-700">
-                                <i data-lucide="utensils-crossed" class="h-6 w-6 mr-2"></i>
-                                <h4 class="font-bold text-lg">2:30 PM: Comida en Villa Torel</h4>
-                            </div>
-                            <p class="text-gray-600">Una alternativa excepcional con vistas espectaculares. Disfruten de alta cocina mediterránea en un entorno sofisticado y panorámico.</p>
-                        </div>
-                         <div class="p-6 bg-gray-50 rounded-b-lg mt-auto">
-                            <a href="https://villatorel.com/" target="_blank" class="btn w-full text-center bg-teal-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-teal-700">Reservar en Villa Torel (+52 646 286 3317)</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-             <!-- Day 4: Saturday -->
-            <div class="mb-12">
-                 <h3 class="text-2xl font-bold mb-6 border-b-2 border-indigo-500 pb-2 flex items-center">
-                    <i data-lucide="calendar" class="h-6 w-6 mr-3 text-indigo-600"></i>
-                    Día 4: Sábado, 19 de Julio
-                </h3>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <div class="flex items-center text-indigo-700">
-                        <i data-lucide="shopping-bag" class="h-6 w-6 mr-2"></i>
-                        <h4 class="font-bold text-lg">Mañana de Despedida</h4>
-                    </div>
-                    <p class="mt-2 text-gray-600">Aprovechen para un desayuno tranquilo, comprar sus vinos favoritos como recuerdo y prepararse para el regreso.</p>
-                    <p class="mt-2 font-semibold text-gray-800">Recuerden salir a las <span class="text-indigo-700">12:15 PM</span> hacia Tijuana.</p>
-                </div>
-            </div>
-
-        </section>
-
-    </main>
-    
-    <footer class="bg-gray-800 text-white">
-        <div class="container mx-auto px-6 py-8 text-center">
-            <p>¡Que disfruten de un viaje culinario extraordinario!</p>
-            <p class="text-sm text-gray-400 mt-2">Este itinerario es una sugerencia. Los horarios pueden variar.</p>
+    <!-- FOOTER -->
+    <footer class="bg-[#001329] py-8">
+        <div class="text-center text-[#495E75]">
+            &copy; 2024 ab design hub. Creado con IA y diseño.
         </div>
     </footer>
 
     <script>
-        lucide.createIcons();
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // --- DATA ---
+        const filterCategories = ['All', 'Soon', 'Personal', 'Business', 'AI Ex', 'Grid', 'Gemini', 'V0'];
+        const projects = [
+            { id: 1, title: 'Valle de Guadalupe 2025', tags: ['Personal', 'Gemini', 'V0'], link: '/valle25' },
+            { id: 2, title: 'App en HTML con mini prompt', tags: ['Business', 'Gemini', 'V0', 'Grid', 'AI Ex'], link: '/appbx' },
+            { id: 3, title: 'Sales HUB', tags: ['Soon', 'Business', 'Gemini', 'AI Ex'], link: '/saleshub' },
+            { id: 4, title: 'UX Design HUB', tags: ['Soon', 'Business', 'Gemini', 'AI Ex'], link: '/uxhub' },
+            { id: 5, title: 'Help Center Redesign', tags: ['Soon', 'Business', 'Gemini', 'AI Ex'], link: '/helpcenter' },
+            { id: 6, title: 'UX Design Showcase', tags: ['Soon', 'Business', 'Gemini', 'AI Ex'], link: '/showcase' }
+        ];
+
+        // --- DOM ELEMENTS ---
+        const mainHeadline = document.getElementById('main-headline');
+        const introParagraphContainer = document.getElementById('intro-paragraph-container');
+        const stickyLogo = document.getElementById('sticky-logo');
+        const filtersContainer = document.getElementById('filters');
+        const projectGrid = document.getElementById('project-grid');
+
+        // --- STATE ---
+        let activeFilters = ['All'];
+
+        // --- FUNCTIONS ---
+
+        const handleScroll = () => {
+            const scrollY = window.scrollY;
+            const vh = window.innerHeight;
+            const animationRange = vh; 
+            const scrollFraction = Math.min(scrollY / animationRange, 1);
+
+            const headlineY = -scrollFraction * 300;
+            const headlineOpacity = 1 - scrollFraction * 1.5;
+            mainHeadline.style.opacity = Math.max(0, headlineOpacity).toString();
+            mainHeadline.style.transform = `translateY(${headlineY}px) scale(${1 - scrollFraction * 0.05})`;
+
+            const paragraphStartY = 150;
+            const paragraphTravelDistance = vh * 0.8;
+            const paragraphY = paragraphStartY - (scrollFraction * paragraphTravelDistance);
+            const paragraphOpacity = Math.min(scrollFraction * 1.5, 1);
+            introParagraphContainer.style.opacity = paragraphOpacity.toString();
+            introParagraphContainer.style.transform = `translateY(${paragraphY}px) scale(1)`;
+
+            if (scrollY > vh * 0.9) {
+                stickyLogo.classList.remove('-translate-y-full', 'opacity-0');
+            } else {
+                stickyLogo.classList.add('-translate-y-full', 'opacity-0');
+            }
+        };
+
+        const renderFilters = () => {
+            filtersContainer.innerHTML = filterCategories.map(category => `
+                <button
+                    class="filter-chip px-5 py-2 rounded-full text-sm font-semibold transition-all-smooth ${activeFilters.includes(category) ? 'active' : 'text-white/80 bg-white/20 hover:bg-white/30'}"
+                    data-filter="${category}"
+                >
+                    ${category}
+                </button>
+            `).join('');
+        };
+
+        const renderProjects = () => {
+            const filteredProjects = projects.filter(project => {
+                if (activeFilters.includes('All')) return true;
+                return activeFilters.every(filter => project.tags.includes(filter));
+            });
+
+            projectGrid.innerHTML = filteredProjects.map(project => `
+                <a href="${project.link}" target="_blank" rel="noopener noreferrer" class="project-card group bg-[#0075FF] border border-white/70 rounded-2xl flex flex-col h-[320px] p-6">
+                    <div class="flex-grow">
+                         <h3 class="text-4xl font-bold mb-4 text-white leading-tight">${project.title}</h3>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            ${project.tags.map(tag => `<span class="text-xs font-normal text-white/80 bg-white/20 px-3 py-1 rounded-full">${tag}</span>`).join('')}
+                        </div>
+                    </div>
+                    <div class="mt-auto ml-auto">
+                        <div class="h-10 w-10 flex items-center justify-center rounded-lg bg-transparent group-hover:bg-white transition-all-smooth">
+                             <svg class="w-5 h-5 text-white group-hover:text-[#0075FF] transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </div>
+                    </div>
+                </a>
+            `).join('');
+        };
+        
+        const handleFilterClick = (e) => {
+            const clickedFilter = e.target.dataset.filter;
+            if (!clickedFilter) return;
+
+            if (clickedFilter === 'All') {
+                activeFilters = ['All'];
+            } else {
+                if (activeFilters.includes('All')) {
+                    activeFilters = [];
+                }
+                if (activeFilters.includes(clickedFilter)) {
+                    activeFilters = activeFilters.filter(f => f !== clickedFilter);
+                } else {
+                    activeFilters.push(clickedFilter);
+                }
+                if (activeFilters.length === 0) {
+                    activeFilters = ['All'];
+                }
+            }
+            
+            renderFilters();
+            renderProjects();
+        };
+
+        // --- INITIALIZATION ---
+        handleScroll();
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        filtersContainer.addEventListener('click', handleFilterClick);
+
+        renderFilters();
+        renderProjects();
+    });
     </script>
 </body>
 </html>
