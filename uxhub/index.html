@@ -50,9 +50,9 @@
         <!-- Contenido Dinámico -->
         <div>
             <!-- El nombre del proyecto se insertará aquí -->
-            <h1 id="project-name" class="text-8xl font-bold text-[#495E75] lowercase leading-none tracking-tighter"></h1>
+            <h1 id="project-name" class="text-6xl md:text-8xl font-bold text-[#495E75] lowercase leading-none tracking-tighter break-words"></h1>
             <!-- La palabra "soon" -->
-            <h2 class="text-[180px] font-bold main-grad lowercase leading-none tracking-tighter">soon</h2>
+            <h2 class="text-[120px] md:text-[180px] font-bold main-grad lowercase leading-none tracking-tighter break-words">soon</h2>
         </div>
     </main>
 
@@ -65,7 +65,10 @@
                 
                 // Limpia la ruta para obtener solo el nombre del proyecto
                 // Remueve la primera diagonal "/" y cualquier otra al final
-                const projectName = path.replace(/^\/|\/$/g, ''); 
+                let projectName = path.replace(/^\/|\/$/g, ''); 
+                
+                // Decodifica caracteres especiales en la URL, como %20 por espacios
+                projectName = decodeURIComponent(projectName);
 
                 return projectName || 'proyecto'; // Devuelve 'proyecto' si la ruta está vacía
             };
