@@ -16,7 +16,7 @@
             font-family: 'Figtree', sans-serif;
             background-color: #001329; /* MainBlackColor */
             color: #BBC0CA; /* LightGrayColor */
-            overflow-x: hidden; /* Previene el desbordamiento horizontal */
+            overflow-x: hidden; /* Previene el desbordamiento horizontal por el texto grande */
         }
 
         /* Definición del gradiente principal */
@@ -33,7 +33,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: flex-start;
+            align-items: flex-start; /* Alineado a la izquierda como en la imagen */
             min-height: 100vh;
         }
     </style>
@@ -50,9 +50,9 @@
         <!-- Contenido Dinámico -->
         <div>
             <!-- El nombre del proyecto se insertará aquí -->
-            <h1 id="project-name" class="text-5xl sm:text-6xl md:text-8xl font-bold text-[#495E75] lowercase leading-none tracking-tighter break-all"></h1>
+            <h1 id="project-name" class="text-6xl md:text-8xl font-bold text-[#495E75] lowercase leading-none tracking-tighter break-words"></h1>
             <!-- La palabra "soon" -->
-            <h2 class="text-8xl sm:text-[120px] md:text-[180px] font-bold main-grad lowercase leading-none tracking-tighter break-all">soon</h2>
+            <h2 class="text-[120px] md:text-[180px] font-bold main-grad lowercase leading-none tracking-tighter break-words">soon</h2>
         </div>
     </main>
 
